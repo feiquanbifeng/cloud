@@ -1,0 +1,2 @@
+KUBELET_ARGS="--api-servers=http://10.174.229.218:8080 --hostname-override=10.144.24.126 --logtostderr=false --l
+og-dir=/var/log/kubernetes --v=2"
