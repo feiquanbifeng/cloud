@@ -1,2 +1,1 @@
-KUBELET_ARGS="--api-servers=http://10.174.229.218:8080 --hostname-override=10.144.24.126 --logtostderr=false --l
-og-dir=/var/log/kubernetes --v=2"
+KUBELET_ARGS="--register-node=true --cni-bin-dir=/opt/cni/bin --cni-conf-dir=/etc/cni/net.d --address=0.0.0.0 --allow-privileged=true --cluster-dns=10.100.0.10 --cluster-domain=cluster.local --pod-infra-container-image=kubernetes/pause --api-servers=http://10.174.229.218:8080 --hostname-override=10.144.24.126 --node-ip=10.144.24.126 --logtostderr=false --log-dir=/var/log/kubernetes --network-plugin=cni --network-plugin-dir=/etc/cni/net.d --v=2"
