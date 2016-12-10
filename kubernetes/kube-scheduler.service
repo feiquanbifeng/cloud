@@ -1,6 +1,6 @@
 [Unit]
 Description=Kubernetes Scheduler
-Documentation=https://github.com/GoogelCloudPlatform/kubernetes
+Documentation=https://github.com/kubernetes/kubernetes
 After=kube-apiserver.service
 Requires=kube-apiserver.service
 
