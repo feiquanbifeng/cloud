@@ -1,6 +1,6 @@
 [Unit]
 Description=Kubernetes Kube-Proxy Server
-Documentation=https://github.com/GoogelCloudPlatform/kubernetes
+Documentation=https://github.com/kubernetes/kubernetes
 After=network.service
 Requires=network.service
 
