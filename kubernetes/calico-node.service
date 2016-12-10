@@ -1,0 +1,16 @@
+[Unit]
+Description=calicoctl node
+After=docker.service
+Requires=docker.service
+
+[Service]
+User=root
+Environment="ETCD_ENDPOINTS=http://127.0.0.1:2379"
+PermissionsStartOnly=true
+ExecStartPre=/usr/bin/chmod +x /usr/local/bin/calicoctl
+ExecStart=/usr/local/bin/calicoctl node --ip=10.174.229.218 --detach=false
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
