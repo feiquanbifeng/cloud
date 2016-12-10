@@ -1,1 +1,1 @@
-KUBE_PROXY_ARGS="--master=http://10.174.229.218:8080 --logtostderr=false --log-dir=/var/log/kubernetes --v=2"
+KUBE_PROXY_ARGS="--kubeconfig=/etc/kubernetes/config --master=http://10.174.229.218:8080 --proxy-mode=iptables --logtostderr=false --log-dir=/var/log/kubernetes --v=2"
