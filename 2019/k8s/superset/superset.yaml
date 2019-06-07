@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: superset
+  namespace: statistic
+  labels:
+    app: superset
+spec:
+  replicas: 1
+  serviceName: superset-statefulset
+  selector:
+    matchLabels:
+      app: superset
+  template:
+    metadata:
+      labels:
+        app: superset
+    spec:
+      nodeSelector:
+        release: stage
+      volumes:
+      - name: superset-config
+        hostPath:
+         path: "/opt/data/superset"
+         type: Directory
+      containers:
+      - name: superset
+        image: amancevice/superset:0.28.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8088
+        volumeMounts:
+        - name: superset-config
+          mountPath: /etc/superset/
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: superset-service
+  namespace: statistic
+  labels:
+    app: superset
+spec:
+  ports:
+  - port: 8088
+    targetPort: 8088
+  selector:
+    app: superset
